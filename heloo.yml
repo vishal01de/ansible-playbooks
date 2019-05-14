@@ -4,3 +4,14 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+        
+        - name: Creating Motd
+        hosts: all
+ user: vishal
+ vars: 
+ motd_warning: "hi this test and warning\n to check\n" 
+  tasks: 
+  - name: sample motd
+  copy:
+  dest: /etc/motd
+  content: "{{ motd_warning }}"
