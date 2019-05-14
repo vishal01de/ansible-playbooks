@@ -1,0 +1,10 @@
+---
+- host: home-lab
+ user: vishal
+ vars: 
+ motd_warning: "hi this test and warning\n to check\n" 
+  tasks: 
+  - name: sample motd
+  copy:
+  dest: /etc/motd
+  content: "{{ motd_warning }}"
